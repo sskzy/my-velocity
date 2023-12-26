@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.generation.mapper.TableMapper">
+
+    <select id="getTableInfo" resultType="com.example.demo.generation.domain.Table">
+        SELECT column_name              AS columnName,
+               data_type                AS dataType,
+               column_comment           AS columnComment,
+               column_key               AS columnKey,
+               extra                    AS extra,
+               character_maximum_length AS characterMaximumLength,
+               is_nullable              AS isNullable,
+               column_default           AS columnDefault
+        FROM information_schema.COLUMNS
+        WHERE table_schema = (SELECT DATABASE())
+          AND table_name = #{tableName};
+    </select>
+</mapper>
