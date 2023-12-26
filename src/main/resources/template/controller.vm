@@ -1,0 +1,22 @@
+package ${PACKAGE_NAME}.${MODULE_NAME}.controller;
+
+import io.swagger.annotations.Api;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
+
+/**
+* @author : ${AUTHOR_NAME}
+* @since : ${DATE} ${TIME}
+*/
+@Slf4j
+@RestController
+@RequestMapping("/${class_name}")
+@Api(value = "${class_name}", tags = "")
+public class ${CLASS_NAME}Controller {
+    @Resource
+    private ${CLASS_NAME}Service ${class_name}Service;
+
+}

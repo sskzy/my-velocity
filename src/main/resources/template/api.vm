@@ -1,0 +1,45 @@
+import request from '@/utils/request'
+
+/**
+* 根据 ID 查询
+*/
+export function getById(params) {
+  return request({
+    url: `${BASIC_PATH}/${class_name}/getById`,
+    method: 'get',
+    params: params
+  })
+}
+
+/**
+* 插入一条记录
+*/
+export function save(params) {
+  return request({
+    url: '${BASIC_PATH}/${class_name}/save',
+    method: 'get',
+    params: params
+  })
+}
+
+/**
+* 根据 ID 选择修改
+*/
+export function updateById(params) {
+  return request({
+    url: '${BASIC_PATH}/${class_name}/updateById',
+    method: 'get',
+    params: params
+  })
+}
+
+/**
+* 根据 ID 删除
+*/
+export function removeById(params) {
+  return request({
+    url: '${BASIC_PATH}/${class_name}/removeById',
+    method: 'get',
+    params: params
+  })
+}

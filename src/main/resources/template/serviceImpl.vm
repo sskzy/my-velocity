@@ -1,0 +1,21 @@
+package ${PACKAGE_NAME}.${MODULE_NAME}.service.impl;
+
+import com.baomidou.dynamic.datasource.annotation.DS;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.time.LocalDateTime;
+
+/**
+* @author : ${AUTHOR_NAME}
+* @since : ${DATE} ${TIME}
+*/
+@Slf4j
+@Service
+@DS("master")
+public class ${CLASS_NAME}ServiceImpl extends ServiceImpl<${CLASS_NAME}Mapper, ${CLASS_NAME}>
+        implements ${CLASS_NAME}Service {
+
+}

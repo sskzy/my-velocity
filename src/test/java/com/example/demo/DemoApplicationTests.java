@@ -1,22 +1,21 @@
 package com.example.demo;
 
-import com.example.demo.generation.domain.Table;
-import com.example.demo.generation.mapper.TableMapper;
+import com.example.demo.generation.utils.Generation;
+import com.example.demo.generation.utils.GenerationUtils;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import javax.annotation.Resource;
 
 @SpringBootTest
 class DemoApplicationTests {
 
-    @Resource
-    TableMapper tableMapper;
-
     @Test
-    void contextLoads() {
-        for (Table activity : tableMapper.getTableInfo("activity")) {
-            System.out.println(activity);
-        }
+    public void contextLoad() {
+        Generation generation = new Generation();
+        generation.setAuthorName("songtc");
+        generation.setEntityName("ActivityLimited");
+        generation.setPackageName("com.ccspeed.desktop");
+        generation.setModuleName("order");
+
+        GenerationUtils.getInstance(generation).execute(".\\src\\main\\resources\\generation\\");
     }
 }
