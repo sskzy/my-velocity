@@ -69,25 +69,25 @@ public class GenerationUtils {
 
     private void assembler() {
         context = new VelocityContext();
-        //
+        // 表信息写入
         List<Table> tables = tableMapper.getTableInfo(generation.getTableName());
         for (Table table : tables) {
             table.setColumnName(StringUtils.uncapitalize(tableNameConverter(table.getColumnName())));
         }
         context.put("TABLE_INFO", tables);
 
-        //
+        // 日期写入
         String[] split = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
                 .format(LocalDateTime.now()).split(" ");
         context.put("DATE", split[0]);
         context.put("TIME", split[1]);
 
-        //
+        // 类名写入
         String tableName = generation.getTableName();
         context.put(CLASS_NAME, tableNameConverter(tableName));
         context.put("class_name", StringUtils.uncapitalize(tableNameConverter(tableName)));
 
-        //
+        // 其他写入
         context.put("AUTHOR_NAME", generation.getAuthorName());
         context.put("PACKAGE_NAME", generation.getPackageName());
         context.put("MODULE_NAME", generation.getModuleName());

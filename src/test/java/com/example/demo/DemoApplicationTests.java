@@ -11,11 +11,11 @@ class DemoApplicationTests {
     @Test
     void contextLoads() {
         Generation generation = new Generation();
-        generation.setTableName("activity");
-        generation.setAuthorName("songtc");
-        generation.setModuleName("");
-        generation.setPackageName("com.example.demo");
-
+        generation.setTableName("activity"); // 指定表名
+        generation.setAuthorName("songtc"); // 指定作者
+        generation.setModuleName(""); // 指定模块
+        generation.setPackageName("com.example.demo"); // 指定基础包名
+        // 指定生成路径
         GenerationUtils.getInstance(generation).execute(".\\src\\main\\resources\\generation\\");
     }
 }
