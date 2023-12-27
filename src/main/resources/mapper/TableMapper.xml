@@ -14,7 +14,6 @@
                is_nullable              AS isNullable,
                column_default           AS columnDefault
         FROM information_schema.COLUMNS
-        WHERE table_schema = (SELECT DATABASE())
-          AND table_name = #{tableName};
+        WHERE table_schema = (SELECT DATABASE()) AND table_name = #{tableName}
     </select>
 </mapper>

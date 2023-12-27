@@ -1,13 +1,12 @@
-package ${PACKAGE_NAME}.${MODULE_NAME}.service;
+package ${PACKAGE_NAME}.#if(${MODULE_NAME}!="").${MODULE_NAME}#end service;
 
-import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.extension.service.IService;
+import ${PACKAGE_NAME}#if(${MODULE_NAME}!="").${MODULE_NAME}#end.domain.${CLASS_NAME};
 
 /**
-* @author : ${AUTHOR_NAME}
-* @since : ${DATE} ${TIME}
-*/
-@DS("master")
+ * @author : ${AUTHOR_NAME}
+ * @since : ${DATE} ${TIME}
+ */
 public interface ${CLASS_NAME}Service extends IService<${CLASS_NAME}> {
 
 }

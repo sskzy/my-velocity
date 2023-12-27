@@ -13,9 +13,9 @@ public class Generation {
      */
     private String authorName;
     /**
-     * 实体
+     * 表名
      */
-    private String entityName;
+    private String tableName;
     /**
      * 包名
      */

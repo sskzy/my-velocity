@@ -1,15 +1,14 @@
-package ${PACKAGE_NAME}.${MODULE_NAME}.mapper;
+package ${PACKAGE_NAME}.#if(${MODULE_NAME}!="").${MODULE_NAME}#end mapper;
 
-import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
+import ${PACKAGE_NAME}#if(${MODULE_NAME}!="").${MODULE_NAME}#end.domain.${CLASS_NAME};
 
 /**
-* @author : ${AUTHOR_NAME}
-* @since : ${DATE} ${TIME}
-*/
+ * @author : ${AUTHOR_NAME}
+ * @since : ${DATE} ${TIME}
+ */
 @Mapper
-@DS("master")
 public interface ${CLASS_NAME}Mapper extends BaseMapper<${CLASS_NAME}> {
 
 }

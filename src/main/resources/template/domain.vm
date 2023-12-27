@@ -1,0 +1,32 @@
+package ${PACKAGE_NAME}#if(${MODULE_NAME}!="").${MODULE_NAME}#end.domain;
+
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Getter;
+import lombok.Setter;
+#foreach(${item} in ${TABLE_INFO})
+    #if(${item.dataType}=='datetime')
+import java.time.LocalDateTime;
+        #break
+    #end
+#end
+
+/**
+ * @author : ${AUTHOR_NAME}
+ * @since : ${DATE} ${TIME}
+ */
+@Setter
+@Getter
+public class ${CLASS_NAME}{
+#foreach(${item} in ${TABLE_INFO})
+    /**
+     * ${item.columnComment}
+     */
+    #if(${item.columnKey}=='PRI')
+    @TableId(type = IdType.AUTO)
+    #end
+    @ApiModelProperty("${item.columnComment}")
+    private #if(${item.dataType} == 'bigint')Long#end#if(${item.dataType} == 'varchar')String#end#if(${item.dataType} == 'int')Integer#end#if(${item.dataType} == 'datetime')LocalDateTime#end#if(${item.dataType} == 'double')Double#end#if(${item.dataType} == 'decimal')BigDecimal#end#if(${item.dataType} == 'boolean')Boolean#end ${item.columnName};
+#end
+}

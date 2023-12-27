@@ -2,6 +2,8 @@ package com.example.demo.generation.domain;
 
 import lombok.Data;
 
+import java.math.BigDecimal;
+
 /**
  * @author : songtc
  * @since : 2023/12/26 10:57

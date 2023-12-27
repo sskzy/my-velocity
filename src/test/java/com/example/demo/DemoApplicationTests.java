@@ -9,12 +9,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 class DemoApplicationTests {
 
     @Test
-    public void contextLoad() {
+    void contextLoads() {
         Generation generation = new Generation();
+        generation.setTableName("activity");
         generation.setAuthorName("songtc");
-        generation.setEntityName("ActivityLimited");
-        generation.setPackageName("com.ccspeed.desktop");
-        generation.setModuleName("order");
+        generation.setModuleName("");
+        generation.setPackageName("com.example.demo");
 
         GenerationUtils.getInstance(generation).execute(".\\src\\main\\resources\\generation\\");
     }
